@@ -32,7 +32,7 @@ public class RotatingAudioBands extends Visual {
         setFrameSize(256);
 
         startMinim();
-        loadAudio("heroplanet.mp3");
+        loadAudio("hula-hoops.mp3");
         getAudioPlayer().play();
         //startListening(); 
         
