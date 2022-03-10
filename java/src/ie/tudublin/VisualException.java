@@ -3,7 +3,7 @@ package ie.tudublin;
 public class VisualException extends Throwable
 {
     /**
-     *
+     *hi
      */
     private static final long serialVersionUID = 1L;
     
