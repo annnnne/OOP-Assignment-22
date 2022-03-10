@@ -1,6 +1,7 @@
 # Music Visualiser Project
 
-Name: Justine
+Name: Justine Langridge
+	Mena Nguyen
 
 Student Number: C20333476
 
