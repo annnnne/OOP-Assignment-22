@@ -1,8 +1,11 @@
 package ie.tudublin;
 
+import example.AudioBandsVisual;
 import example.CubeVisual;
+import example.CubeVisual1;
 import example.MyVisual;
 import example.RotatingAudioBands;
+import example.WaveForm;
 
 public class Main
 {	
@@ -10,7 +13,7 @@ public class Main
 	public void startUI()
 	{
 		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new MyVisual());		
+        processing.core.PApplet.runSketch( a, new RotatingAudioBands());		
 	}
 
 	public static void main(String[] args)
