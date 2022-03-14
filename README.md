@@ -1,8 +1,10 @@
 # Music Visualiser Project
 
-Name: Justine Langridge, Mena Nguyen, Airish Reyes, Mary Anne Flores
+Name: Justine Langridge C20333476
+Mena Nguyen
+Airish Reyes C20477044
+Mary Anne Flores C20461582
 
-Student Number: C20333476, , , C20461582 dfghjhgfdfvbbbbb
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
