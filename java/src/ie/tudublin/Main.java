@@ -8,7 +8,7 @@ import example.RotatingAudioBands;
 import example.WaveForm;
 
 public class Main
-{	//Anneeeeeeeeeeeeee is pretty
+{	//is pretty
 
 	public void startUI()
 	{
