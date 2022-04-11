@@ -28,7 +28,7 @@ public class Hwasa extends Visual{ //Start of Main
     //Start of Draw
     public void draw()
     {
-        background(0);
+        background(HSB);
         fill(255);
         noStroke();
         lights();
