@@ -4,14 +4,23 @@ import ie.tudublin.Visual;
 import ie.tudublin.VisualException;
 
 public class Planets extends Visual {
-    public void settings()
+
+
+    Start start;
+
+    //radius of planet
+    float rad;
+
+   
+
+    //constructor 
+    public Planets(float rad, Start start) 
     {
-        size(800, 800, P3D);
-        
-        //fullScreen(P3D, SPAN);
+        this.rad = rad;
+        this.start = start;
     }
 
-    public void keyPressed()
+    /*public void keyPressed()
     {
         if (key == '1')
         {
@@ -20,6 +29,11 @@ public class Planets extends Visual {
             
         }
  
+    }*/
+
+    public void render()
+    {
+        start.ellipse(300, 300, rad, rad);
     }
 
     public void setup()
@@ -32,7 +46,8 @@ public class Planets extends Visual {
         startMinim();
         loadAudio("ahh.mp3");
         getAudioPlayer().play();
-        //startListening(); 
-        
+        startListening(); 
     }
+
+    
 }
