@@ -17,11 +17,6 @@ public class Main
         processing.core.PApplet.runSketch( a, new RotatingAudioBands());		
 	}
 
-	/*public void planets()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new Planets());		
-	}*/
 
 	public void start()
 	{
