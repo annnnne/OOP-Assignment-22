@@ -1,7 +1,7 @@
 # Music Visualiser Project
 
 Name: Justine Langridge C20333476
-Mena Nguyen
+Mena Nguyen C20418324
 Airish Reyes C20477044
 Mary Anne Flores C20461582
 
