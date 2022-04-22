@@ -9,8 +9,10 @@ import processing.core.PApplet;
 public class Start extends Visual {
 
     Sea sea = new Sea(this);
+    Stars stars = new Stars(this);
     int mode = 0;
-    
+
+
 
     public void settings()
     {
@@ -72,6 +74,8 @@ public class Start extends Visual {
         {
             e.printStackTrace();
         }
+
+
         
         switch (mode) 
         {
@@ -87,7 +91,7 @@ public class Start extends Visual {
                 text("Press 1: Sea and Sun", width/2.0f, (height/3.0f) + 60);
                 text("Press 2: Airish", width/2.0f, (height/3.0f) + 120);
                 text("Press 3: Anne", width/2.0f, (height/3.0f) + 180);
-                text("Press 4: Mena", width/2.0f, (height/3.0f) + 240);
+                text("Press 4: Space", width/2.0f, (height/3.0f) + 240);
 
                 break;
                 
@@ -109,8 +113,9 @@ public class Start extends Visual {
                 break;
 
             //Mena's
+            //stars and airplane
             case 4:
-                background(0);
+                stars.render();
                 break;
 
         }
