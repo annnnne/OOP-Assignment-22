@@ -1,9 +1,6 @@
 package baekedbeans;
 
-
-import ddf.minim.AudioBuffer;
 import ie.tudublin.Visual;
-import ie.tudublin.VisualException;
 
 public class Sea extends Visual {
 
@@ -85,13 +82,13 @@ public class Sea extends Visual {
             sea.beginShape(TRIANGLE_STRIP);
             for(int x = 0; x < cols; x++)
             {
-                
+                //vertices of triangles in strip
                 sea.vertex(x*triangleSize, y*triangleSize, z[x][y]);
                 sea.vertex(x*triangleSize, (y+1)*triangleSize, z[x][y+1]);
 
             }//end for
             sea.endShape();
-        }//end for*/
+        }//end for
         sea.popMatrix();
     
         
@@ -106,10 +103,12 @@ public class Sea extends Visual {
         //colouring the sun
         sea.stroke(255, 215, 0);
         sea.noFill();
+        
         sea.sphere(150+(smoothedavg*100));
-
+        
         //radius of  blank circle inside strokes
         int rad = 180;
+
 
         //creating the strokes
         for(int ang = 0; ang < 362; ang+= 2)

@@ -23,6 +23,16 @@ public class Stars extends Visual{
         int y = 700;
         
     public void render(){
+        
+        //calulating average
+        float avg = 0;
+        for (int i = 0; i < ab.size(); i++)
+        {
+            avg += abs(ab.get(i));
+        }
+        avg = avg / ab.size();
+        float smoothedavg = 0;
+        smoothedavg = lerp(smoothedavg, avg, 0.1f);
 
         int w = 1500;
         int h = 800;
@@ -65,7 +75,7 @@ public class Stars extends Visual{
         // float boxSize = 50 + (getSmoothedAmplitude() * 300);//map(average, 0, 1, 100, 400); 
         // smoothedBoxSize = lerp(smoothedBoxSize, boxSize, 0.2f);  
         stars.fill(255);
-        stars.ellipse( 60 , 70,80 + (getSmoothedAmplitude()*100), 80 + (getSmoothedAmplitude()*100));
+        stars.ellipse( 60 , 70,100 + (smoothedavg*300), 100 + (smoothedavg*300));
         stars.noFill();
 
 
