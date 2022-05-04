@@ -1,8 +1,6 @@
 package baekedbeans;
 
-import ddf.minim.AudioBuffer;
 import ie.tudublin.Visual;
-import ie.tudublin.VisualException;
 
 public class Stars extends Visual{
 

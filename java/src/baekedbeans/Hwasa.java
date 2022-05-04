@@ -1,7 +1,6 @@
 package baekedbeans;
 
 import ie.tudublin.Visual;
-import ie.tudublin.VisualException;
 
 
 public class Hwasa extends Visual{ //Start of Main
