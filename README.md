@@ -5,7 +5,7 @@ Mena Nguyen C20418324
 Airish Reyes C20477044
 Mary Anne Flores C20461582
 
-[![YouTube](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nme.com%2Fnews%2Fmusic%2Fdpr-live-hula-hoops-teaser-mamamoo-hwasa-beenzino-2998865&psig=AOvVaw1ze_2YWYz0h0cvAg5zqS1K&ust=1651863390487000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPih7eqEyfcCFQAAAAAdAAAAABAD)](https://youtu.be/WhHTdqHiOvs)
+[![YouTube](https://img.youtube.com/vi/WhHTdqHiOvs/default.jpg)](https://youtu.be/WhHTdqHiOvs)
 
 
 ## Instructions
