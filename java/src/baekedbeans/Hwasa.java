@@ -1,53 +1,118 @@
 package baekedbeans;
 
 import ie.tudublin.Visual;
-import ie.tudublin.VisualException;
 
 
 public class Hwasa extends Visual{ //Start of Main
 
-    //Start of settings
-    public void settings()
-    
+    Start hwasa;
+    float theta = 0;
+
+    public Hwasa(Start hwasa) {
+        this.hwasa = hwasa;
+    }
+
+    public void cloud(int a, int b, int c, float d)
     {
-        size(1400, 800, P3D);
+        hwasa.noStroke();
+        hwasa.fill(255);
+        hwasa.ellipse(a+530, b+295, c+40, d+30);
+        hwasa.ellipse(a+510, b+305, c+40, d+30);
+        hwasa.ellipse(a+460, b+295, c+40, d+30);
+        hwasa.ellipse(a+480, b+305, c+40, d+30);
+        hwasa.ellipse (a+470, b+285, c+40, d+30);
+        hwasa.ellipse (a+510, b+285, c+40, d+30);
+        hwasa.ellipse (a+490, b+280, c+40, d+30);
+    }
 
-    }//End of settings
-
-
-    //Start of setup
-
-    //Goal is to make stars or circles that shine with planets in the middle 
-    //going in circles maybe ??
-    public void setup()
-    {
-
-        //size(500,500);
-        colorMode(RGB);
-        noCursor();
-        setFrameSize(256);
-
-    }//End of Setup
 
 
     //Start of Draw
-    public void draw()
+    void render()
     {
+        //calculating the average amplitude
+        float avg = 0;
+        for (int i = 0; i < ab.size(); i++)
+        {
+            avg += abs(ab.get(i));
+        }
+        avg = avg / ab.size();
+        float smoothedavg = 0;
+        smoothedavg = lerp(smoothedavg, avg, 0.1f);
+
+        hwasa.colorMode(HSB);
+
         //The bigger the fill number the faster it goes
-        fill(0,5);
-        rect(0, 0, width, height);
-        fill(255);
-        noStroke();
+        hwasa.fill(0,5);
+        hwasa.fill(255);
+        hwasa.noStroke();
+
 
         //Making the stars/circle bigger representing height and width
-        ellipse(random(width), random(height), 2, 2);
+        if( hwasa.frameCount % 10 ==  00)
+        {
 
+            hwasa.ellipse(random(hwasa.width), random(hwasa.height), 5, 5);
 
-        //for the floating circle thingy that suppose to be a planet
-        float move = sin(radians(frameCount));
-        circle(224, 184, 250);
-        ellipse(width/2 + move * 360, height/2,100,100);
+        }
+        //put 0,0 at centre
+        hwasa.translate(hwasa.width/2, hwasa.height/2, 0);
 
+        int tris = (int) (mouseX / 20.0f);
+        
+        for(int i = 0; i <= 350; i+= 50)
+        {
+            float c = hwasa.map(i, 0, 700, 0, 255);
+            hwasa.fill(c, 255, 255);
+            hwasa.triangle(0, 0, 1000, -i, 1000, -i+50);
+        }
+
+        //clouds
+        cloud(-600, -544, 10, 10* smoothedavg*10);
+        cloud(-800, -644, 10, 10* smoothedavg*10);
+        cloud(-1000, -644, 10, 10* smoothedavg*10);
+        cloud(-100, -544, 10, 10* smoothedavg*10);
+        cloud(-300, -600, 10, 10* smoothedavg*10);
+        cloud(0, -644, 10, 10* smoothedavg*10);
+       
+       
+                
+        //rotate triangle without affecting others
+        hwasa.pushMatrix();
+        
+        //rotate triangle to song
+        theta += 0.01 + smoothedavg;
+
+       
+        hwasa.rotateY(theta);
+
+        hwasa.stroke(255);
+        hwasa.rotateX(PI/2);
+        hwasa.noFill();
+
+        hwasa.beginShape();
+        hwasa.vertex(-100, -100, -100);
+        hwasa.vertex( 100, -100, -100);
+        hwasa.vertex(   0,    0,  100);
+
+        hwasa.vertex( 100, -100, -100);
+        hwasa.vertex( 100,  100, -100);
+        hwasa.vertex(   0,    0,  100);
+
+        hwasa.vertex( 100, 100, -100);
+        hwasa.vertex(-100, 100, -100);
+        hwasa.vertex(   0,   0,  100);
+
+        hwasa.vertex(-100,  100, -100);
+        hwasa.vertex(-100, -100, -100);
+        hwasa.vertex(   0,    0,  100);
+        hwasa.endShape();
+
+        hwasa.popMatrix();
+
+        int x;
+
+        
 
 
     }
