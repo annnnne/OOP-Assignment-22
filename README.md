@@ -5,6 +5,8 @@ Mena Nguyen C20418324
 Airish Reyes C20477044
 Mary Anne Flores C20461582
 
+[![YouTube](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nme.com%2Fnews%2Fmusic%2Fdpr-live-hula-hoops-teaser-mamamoo-hwasa-beenzino-2998865&psig=AOvVaw1ze_2YWYz0h0cvAg5zqS1K&ust=1651863390487000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPih7eqEyfcCFQAAAAAdAAAAABAD)](https://youtu.be/WhHTdqHiOvs)
+
 
 ## Instructions
 - Fork this repository and use it a starter project for your assignment
@@ -18,6 +20,10 @@ Mary Anne Flores C20461582
 # Instructions
 
 # How it works
+To be able to run this project you will need Visual Studio Code, and have the relevant Java Libraries and Processing Libraries installed. To start the project, you will need to hit FN-f5 to run the program. This will open the main screen with the list of visualizers for you to watch and start playing the song. 
+
+We mad
+The main file is called Start.java and
 
 # What I am most proud of in the assignment
 

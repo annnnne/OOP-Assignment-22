@@ -1,5 +1,4 @@
 package baekedbeans;
-
 import ie.tudublin.Visual;
 import ie.tudublin.VisualException;
 
@@ -11,6 +10,7 @@ public class Start extends Visual {
     int mode = 0;
     Bee bee = new Bee(this);
     Butterfly butt = new Butterfly(this);
+    Hwasa hwasa = new Hwasa(this);
 
 
     public void keyPressed()
@@ -45,6 +45,7 @@ public class Start extends Visual {
     
     public void setup()
     {
+        //start playing song
         startMinim();
         loadAudio("ahh.mp3");
         getAudioPlayer().play();
@@ -85,7 +86,7 @@ public class Start extends Visual {
                 textSize(width/30.0f);
                 text("Press 1: Sea and Sun", width/2.0f, (height/3.0f) + 60);
                 text("Press 2: Flower Power", width/2.0f, (height/3.0f) + 120);
-                text("Press 3: Anne", width/2.0f, (height/3.0f) + 180);
+                text("Press 3: Pink Floyd Moment", width/2.0f, (height/3.0f) + 180);
                 text("Press 4: Space", width/2.0f, (height/3.0f) + 240);
                 text("Press 5: Butterfly vibe", width/2.0f, (height/3.0f) + 300);
 
@@ -106,9 +107,10 @@ public class Start extends Visual {
                 
                 break;
 
-            //Planets
+            //Pink floyd
             case 3:
-                background(0);
+                background(0, 0, 20);
+                hwasa.render();
                 break;
 
             //stars and airplane

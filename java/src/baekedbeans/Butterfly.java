@@ -76,9 +76,9 @@ public class Butterfly extends Visual{
 
         if(a>=3)
         {
-            for (int i= -250;i<1400; i+=250)
+            for (int i= -250;i<=1700; i+=250)
             {
-                for (j=-250;j<700;j+=250)
+                for (j=-250;j<800;j+=250)
                 {
                     butt.fill(255);
                     butt.ellipse(250+i,250+j,100,100); 
@@ -117,9 +117,9 @@ public class Butterfly extends Visual{
 
         if(a>=2)
         {
-            for (i=-125;i<1400;i+=250)
+            for (i=-125;i<1700;i+=250)
             {
-                for (j=-125;j<700;j+=250)
+                for (j=-125;j<800;j+=250)
                 {
                     butt.fill (255);
                     butt.ellipse (250+i,250+j,100,100); 
