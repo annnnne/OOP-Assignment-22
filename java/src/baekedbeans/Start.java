@@ -87,7 +87,7 @@ public class Start extends Visual {
                 text("Press 2: Flower Power", width/2.0f, (height/3.0f) + 120);
                 text("Press 3: Anne", width/2.0f, (height/3.0f) + 180);
                 text("Press 4: Space", width/2.0f, (height/3.0f) + 240);
-                text("Press 5: Butterfly", width/2.0f, (height/3.0f) + 300);
+                text("Press 5: Butterfly vibe", width/2.0f, (height/3.0f) + 300);
 
                 break;
                 
@@ -99,14 +99,14 @@ public class Start extends Visual {
                 
                 break;
 
-            //airish's
+            //Flowers
             case 2:
                 background(0);
                 bee.render();
                 
                 break;
 
-            //Anne's
+            //Planets
             case 3:
                 background(0);
                 break;
@@ -117,6 +117,7 @@ public class Start extends Visual {
                 stars.render();
                 break;
 
+            //butterfly scene
             case 5:
                 background(0);
                 butt.render();
