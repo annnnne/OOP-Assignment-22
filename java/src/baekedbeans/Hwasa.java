@@ -10,15 +10,20 @@ public class Hwasa extends Visual{ //Start of Main
     public void settings()
     
     {
-        size(800, 800, P3D);
+        size(1400, 800, P3D);
 
     }//End of settings
 
 
     //Start of setup
+
+    //Goal is to make stars or circles that shine with planets in the middle 
+    //going in circles maybe ??
     public void setup()
     {
-        colorMode(HSB);
+
+        //size(500,500);
+        colorMode(RGB);
         noCursor();
         setFrameSize(256);
 
@@ -28,19 +33,27 @@ public class Hwasa extends Visual{ //Start of Main
     //Start of Draw
     public void draw()
     {
-        background(HSB);
+        //The bigger the fill number the faster it goes
+        fill(0,5);
+        rect(0, 0, width, height);
         fill(255);
         noStroke();
-        lights();
-        
 
-        float wave = sin(radians(frameCount));
-        ellipse(width/2+wave* 300, height/2,100,100);
+        //Making the stars/circle bigger representing height and width
+        ellipse(random(width), random(height), 2, 2);
+
+
+        //for the floating circle thingy that suppose to be a planet
+        float move = sin(radians(frameCount));
+        circle(224, 184, 250);
+        ellipse(width/2 + move * 360, height/2,100,100);
+
+
+
     }
 
 
-
-
+    
 
     
 }//End of Main

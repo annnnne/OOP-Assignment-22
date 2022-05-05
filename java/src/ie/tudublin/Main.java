@@ -29,10 +29,17 @@ public class Main
         processing.core.PApplet.runSketch( a, new Start());		
 	}
 
+	public void Hwasa()
+	{
+		String[] a = {"MAIN"};
+        processing.core.PApplet.runSketch( a, new Hwasa());		
+	}
+
 	public static void main(String[] args)
 	{
 		Main main = new Main();
-		main.start();			
+		main.start();
+		main.Hwasa();		
 	}
 	//hello 
 }
