@@ -16,7 +16,10 @@ public class Sea extends Visual {
     //function to draw visualiser
     public void render()
     {
+        
+        sea.translate(sea.width/2, sea.height/2);
         sea.strokeWeight(1);
+
         //background colour
         sea.colorMode(RGB);        
         sea.background(0);
@@ -37,22 +40,19 @@ public class Sea extends Visual {
             avg += abs(ab.get(i));
         }
         avg = avg / ab.size();
+
+        //smoothed average amplitude
         float smoothedavg = 0;
         smoothedavg = lerp(smoothedavg, avg, 0.1f);
 
-        //creating a lerped buffer for smoothness
-        float[] lerpedBuffer;
-        lerpedBuffer = new float[ab.size()];
-
-        for(int i = 0; i < ab.size(); i++)
-        {
-            lerpedBuffer[i] = lerp(lerpedBuffer[i], ab.get(i), 0.1f);
-        }
         
         //initialising array storing z coordinates to be make the sea move
         float[][] z;
         z = new float[cols][rows];
+
+        //variable to make the sea waves
         float yoff = wavy;
+        
         for(int y = 0; y < rows; y++)
         {
             float xoff = 0;
