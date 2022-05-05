@@ -101,7 +101,7 @@ public class Start extends Visual {
 
             //airish's
             case 2:
-                
+                background(0);
                 bee.render();
                 
                 break;
