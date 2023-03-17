@@ -12,6 +12,7 @@ public class Hwasa extends Visual{ //Start of Main
         this.hwasa = hwasa;
     }
 
+    //function to draw clouds
     public void cloud(int a, int b, int c, float d)
     {
         hwasa.noStroke();
@@ -58,11 +59,11 @@ public class Hwasa extends Visual{ //Start of Main
         //put 0,0 at centre
         hwasa.translate(hwasa.width/2, hwasa.height/2, 0);
 
-        int tris = (int) (mouseX / 20.0f);
-        
+        //rainbow triangles
         for(int i = 0; i <= 350; i+= 50)
         {
-            float c = hwasa.map(i, 0, 700, 0, 255);
+            //colour the triangles for the rainbow strip
+            float c = map(i, 0, 700, 0, 255);
             hwasa.fill(c, 255, 255);
             hwasa.triangle(0, 0, 1000, -i, 1000, -i+50);
         }
@@ -77,19 +78,19 @@ public class Hwasa extends Visual{ //Start of Main
        
        
                 
-        //rotate triangle without affecting others
+        //rotate pyramid without affecting others
         hwasa.pushMatrix();
         
-        //rotate triangle to song
+        //rotate pyramids to song
         theta += 0.01 + smoothedavg;
-
-       
         hwasa.rotateY(theta);
 
+        hwasa.strokeWeight(7);
         hwasa.stroke(255);
         hwasa.rotateX(PI/2);
         hwasa.noFill();
 
+        //begin drawing pyramid
         hwasa.beginShape();
         hwasa.vertex(-100, -100, -100);
         hwasa.vertex( 100, -100, -100);
@@ -106,19 +107,10 @@ public class Hwasa extends Visual{ //Start of Main
         hwasa.vertex(-100,  100, -100);
         hwasa.vertex(-100, -100, -100);
         hwasa.vertex(   0,    0,  100);
-        hwasa.endShape();
+        hwasa.endShape();//end pyramid
 
         hwasa.popMatrix();
 
-        int x;
-
-        
-
-
-    }
-
-
-    
-
-    
-}//End of Main
+    }//end of render
+ 
+}

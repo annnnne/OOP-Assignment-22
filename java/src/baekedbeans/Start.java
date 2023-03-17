@@ -1,18 +1,15 @@
 package baekedbeans;
-
 import ie.tudublin.Visual;
-import ie.tudublin.VisualException;
-
 
 public class Start extends Visual {
 
     Sea sea = new Sea(this);
     Stars stars = new Stars(this);
-    int mode = 0;
     Bee bee = new Bee(this);
     Butterfly butt = new Butterfly(this);
     Hwasa hwasa = new Hwasa(this);
 
+    int mode = 0;
 
     public void keyPressed()
     {
@@ -46,6 +43,7 @@ public class Start extends Visual {
     
     public void setup()
     {
+        //start playing song
         startMinim();
         loadAudio("ahh.mp3");
         getAudioPlayer().play();
@@ -60,20 +58,7 @@ public class Start extends Visual {
     }
 
     public void draw()
-    {
-        try
-        {
-            // Call this if you want to use FFT data
-            calculateFFT(); 
-        }
-        catch(VisualException e)
-        {
-            e.printStackTrace();
-        }
-        
-        
-       
-        
+    {  
         switch (mode) 
         {
             //main menu
@@ -82,29 +67,30 @@ public class Start extends Visual {
                 fill(135,206,250);
                 textAlign(CENTER);
                 textSize(width/20.0f);
+
+                //title
                 text("HULA HOOPS by DPR LIVE", width/2.0f, height/3.0f);
                 textSize(width/30.0f);
+
+                //list of visualisers
                 text("Press 1: Sea and Sun", width/2.0f, (height/3.0f) + 60);
                 text("Press 2: Flower Power", width/2.0f, (height/3.0f) + 120);
-                text("Press 3: Anne", width/2.0f, (height/3.0f) + 180);
+                text("Press 3: Pink Floyd Moment", width/2.0f, (height/3.0f) + 180);
                 text("Press 4: Space", width/2.0f, (height/3.0f) + 240);
-                text("Press 5: Butterfly", width/2.0f, (height/3.0f) + 300);
+                text("Press 5: Butterfly vibe", width/2.0f, (height/3.0f) + 300);
 
                 break;
                 
             //sea and sun
             case 1:
                 background(0);
-                translate(width/2, height/2);
                 sea.render();
-                
                 break;
 
-            //airish's
+            //Flowers
             case 2:
-                
+                background(0);
                 bee.render();
-                
                 break;
 
             //Pink floyd
@@ -119,6 +105,7 @@ public class Start extends Visual {
                 stars.render();
                 break;
 
+            //butterfly scene
             case 5:
                 background(0);
                 butt.render();

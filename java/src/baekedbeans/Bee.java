@@ -8,9 +8,6 @@ public class Bee extends Visual
 
     Start bee;
 
-
-    
-
     //constructor
     public Bee(Start bee) 
     {
@@ -36,9 +33,11 @@ public class Bee extends Visual
         return color(c, 255, 255);
     }//end getRandomColor()
 
+
     //This function will allow to draw flower multiple times 
     public void drwFlr(float x, float y, float floSize)//passes three parameters the x and y axes and the flower size so flower can be drawn repeatedly and for efficiency
     {
+        bee.colorMode(HSB);
 
         //calulating average
         float avg = 0;
@@ -63,7 +62,9 @@ public class Bee extends Visual
        
         //for flower to appear at different points of the canvas we use the x and y axes
         bee.translate(x, y);
-
+        
+        bee.pushMatrix();
+        
         //for loop so the petals can be drawn repeatedly
         for(int i=0; i<7;i++)
         {
@@ -75,37 +76,44 @@ public class Bee extends Visual
             
         }//end for
 
-       
-        //centre circle
-        bee.strokeWeight(1);
-        bee.fill(255);
-        bee.ellipse(0.0f, 0.0f,  1.5f * floSize, 1.5f * floSize);
+        bee.popMatrix();
 
     }//end drwFlr()
-
-    //setting for the canvas
-    
 
     //This draw function will allow the flowers to be drawn when any key is pressed on keyboard
     void render()
     {
-        bee.pushMatrix();
-        bee.stroke(0);
-        bee.translate(bee.width/2, bee.height/5);
-        bee.text("Press any key to reset!", width/3, height/5);
-        if(bee.keyPressed == true)
+        //calulating average
+        float avg = 0;
+        for (int i = 0; i < ab.size(); i++)
         {
-            bee.background(255);
+            avg += abs(ab.get(i));
         }
+        avg = avg / ab.size();
+        float smoothedavg = 0;
+        smoothedavg = lerp(smoothedavg, avg, 0.1f);
+        
+        bee.pushMatrix();
+        bee.translate(bee.width/2, bee.height/5);
+        bee.fill(255);
+        bee.textSize(50+(50*smoothedavg));
+        bee.text("Press and hold any key for a flower explosion!", 0, 0);
         bee.popMatrix();
 
+        
         //calls drawFlower() function
         //The flowers will also appear in random colour and random places on the canvas
-        if(bee.frameCount % 10 == 0)
+        if(bee.keyPressed == true)
         {
-          drwFlr(random(bee.width), random(bee.height), random(5,25));  
+            drwFlr(random(bee.width), random(bee.height), random(5,25));  
         }
-        
+
+        //pushMatrix to stop the translate in the function messing up the second flower
+        bee.pushMatrix();
+        drwFlr(bee.width/3, bee.height/2, 50);
+        bee.popMatrix();
+
+        drwFlr(2*bee.width/3, bee.height/2, 50);
 
     
     }//end draw()
